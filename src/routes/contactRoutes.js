@@ -5,11 +5,12 @@ const router = express.Router();
 
 // ✅ Database connection
 const db = await mysql.createConnection({
-  host: "127.0.0.1",
-  user: "root",
-  password: "", // change if needed
-  database: "kiwenda_rehab",
+  host: "berxluwp9uzg1wrkd3fg-mysql.services.clever-cloud.com",
+  user: "uv6epsdsvartrbp7",
+  password: "vMK15bzcW5PGP6o9tHef", // change if needed
+  database: "berxluwp9uzg1wrkd3fg",
 });
+
 
 // ✅ POST /contacts → Save contact form data
 router.post("/", async (req, res) => {

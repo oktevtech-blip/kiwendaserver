@@ -22,7 +22,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // ✅ Middleware: CORS with multiple origins
-const allowedOrigins = ["http://localhost:3000", "http://localhost:9002" , "https://kiwendabackend.vercel.app"];
+const allowedOrigins = ["http://localhost:3000", "http://localhost:9002" , "https://www.admin.kiwendarehabcentre.com","https://www.kiwendarehabcentre.com","https://kiwendarehabcentre.com","http://admin.kiwendarehabcentre.com"];
 app.use(
   cors({
     origin: function (origin, callback) {

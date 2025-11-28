@@ -4,6 +4,6 @@ import { upload, uploadHeroImage, getHeroImage } from "../controller/heroControl
 const router = express.Router();
 
 router.post("/upload", upload.single("image"), uploadHeroImage);
-router.get("/", getHeroImage);
+router.get("/hero", getHeroImage);
 
 export default router;

@@ -1,3 +1,4 @@
+// heroRoutes.js
 import express from "express";
 import { upload, uploadHeroImage, getHeroImage } from "../controller/heroController.js";
 

@@ -33,24 +33,12 @@ export const uploadHeroImage = async (req, res) => {
 
 // ✅ Get the current hero image
 export const getHeroImage = async (req, res) => {
-  try {
-    const [rows] = await db.query("SELECT * FROM image_data LIMIT 1");
+  const [rows] = await db.query("SELECT * FROM image_data LIMIT 1");
 
-    if (rows.length === 0) {
-      return res.json({});
-    }
+  if (rows.length === 0) return res.json({ image_url: null });
 
-    const hero = rows[0];
-    const base64Image = hero.image
-      ? Buffer.from(hero.image).toString("base64")
-      : null;
-
-    res.json({
-      image: base64Image,
-      description: hero.description,
-    });
-  } catch (error) {
-    console.error("❌ Fetch error:", error);
-    res.status(500).json({ message: "Error fetching hero image" });
-  }
+  res.json({
+    image_url: `https://kiwendaserver.onrender.com${rows[0].image_path}`,
+    description: rows[0].description
+  });
 };
